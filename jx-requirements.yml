@@ -1,20 +1,83 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
 cluster:
+  clusterName: pr-871-4-mc
+  environmentGitOwner: jenkins-x-versions-bot-test
+  environmentGitPublic: true
   gitKind: github
   gitName: github
+  gitPublic: true
   gitServer: https://github.com
   namespace: jx
+  project: jenkins-x-bdd3
+  provider: gke
+  registry: gcr.io
+  zone: europe-west1-c
 environments:
-- key: dev
-- key: staging
-  remoteCluster: false
-- key: production
-  remoteCluster: false
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  repository: environment-pr-871-4-mc-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  remoteCluster: true
+  repository: environment-pr-871-4-mc-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  remoteCluster: true
+  repository: environment-pr-871-4-mc-production
 gitops: true
 helmfile: true
+ingress:
+  domain: ""
+  externalDNS: false
+  namespaceSubDomain: -jx.
+  tls:
+    email: ""
+    enabled: false
+    production: false
 kaniko: true
 repository: nexus
 secretStorage: local
+storage:
+  backup:
+    enabled: false
+    url: ""
+  logs:
+    enabled: false
+    url: ""
+  reports:
+    enabled: false
+    url: ""
+  repository:
+    enabled: false
+    url: ""
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: master
+  ref: 99136faac8b1f7a05d435b6bad80babdaff1f63a
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: lighthouse
