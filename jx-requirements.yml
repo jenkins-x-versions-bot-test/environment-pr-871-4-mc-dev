@@ -1,6 +1,7 @@
 autoUpdate:
   enabled: false
   schedule: ""
+bootConfigURL: https://jenkins-x-versions-bot-test:a5418f3edc4ea6fda1aac1ec138a718643c555a0@github.com/jenkins-x-versions-bot-test/environment-pr-871-4-mc-dev
 cluster:
   clusterName: pr-871-4-mc
   environmentGitOwner: jenkins-x-versions-bot-test
@@ -16,9 +17,9 @@ cluster:
   zone: europe-west1-c
 environments:
 - ingress:
-    domain: ""
+    domain: 35.233.30.181.nip.io
     externalDNS: false
-    namespaceSubDomain: ""
+    namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
@@ -50,7 +51,7 @@ environments:
 gitops: true
 helmfile: true
 ingress:
-  domain: ""
+  domain: 35.233.30.181.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
